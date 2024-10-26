@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+
+    <persistence-unit name="SmsServiceDS" transaction-type="JTA">
+        <jta-data-source>SmsServiceDS</jta-data-source>
+        <class>ir.tamin.smsservice.model.Request</class>
+        <properties>
+            <property name="eclipselink.deploy-on-startup" value="true"/>
+            <property name="eclipselink.jdbc.native-sql" value="true"/>
+            <property name="eclipselink.logging.logger" value="JavaLogger"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.weaving" value=""/>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.OraclePlatform"/>
+<!--            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/init_script.sql"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
